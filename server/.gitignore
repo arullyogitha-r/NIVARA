@@ -1,0 +1,10 @@
+# Exclude server environment variables with sensitive credentials
+.env
+.env.*
+!.env.example
+
+# Python cache & virtual environment
+__pycache__/
+*.py[cod]
+venv/
+env/

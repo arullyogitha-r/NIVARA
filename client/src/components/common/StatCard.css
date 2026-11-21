@@ -1,0 +1,130 @@
+.stat-card {
+  position: relative;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card.clickable {
+  cursor: pointer;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(91, 75, 219, 0.25);
+}
+
+.stat-card.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.stat-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: -0.1px;
+}
+
+.stat-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  transform: scale(1.08);
+}
+
+/* Icon Variants */
+.icon-primary {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.icon-yellow {
+  background-color: var(--yellow-light);
+  color: #C07908;
+}
+
+.icon-teal {
+  background-color: var(--teal-light);
+  color: var(--teal);
+}
+
+.icon-coral {
+  background-color: var(--coral-light);
+  color: var(--coral);
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.stat-trend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.stat-trend {
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.stat-trend.positive {
+  background-color: rgba(0, 168, 150, 0.12);
+  color: var(--teal);
+}
+
+.stat-trend.negative {
+  background-color: rgba(255, 107, 107, 0.12);
+  color: var(--coral);
+}
+
+.stat-trend-label {
+  color: var(--text-muted);
+}
+
+.stat-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  opacity: 0.05;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(25px);
+}
+
+.stat-primary .stat-glow { background: var(--primary); }
+.stat-yellow .stat-glow { background: var(--yellow); }
+.stat-teal .stat-glow { background: var(--teal); }
+.stat-coral .stat-glow { background: var(--coral); }
